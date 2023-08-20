@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: lib install
+      run: brew install boost libpng cmake libjpeg-turbo
     - name: cmake
       run: cmake .
     - name: make
