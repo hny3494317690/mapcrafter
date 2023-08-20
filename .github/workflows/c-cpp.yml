@@ -21,8 +21,8 @@ jobs:
       run: make
     - name: tgz
       run: tar -czvf build.tgz build
-    - name: Archive code coverage results
+    - name: upload
       uses: actions/upload-artifact@v3
       with:
         name: upload
-        path: biuld.tgz
+        path: build.tgz
