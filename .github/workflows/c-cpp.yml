@@ -19,10 +19,17 @@ jobs:
       run: cmake .
     - name: make
       run: make
-    - name: tgz
+    - name: zip build
       run: tar -czvf build.tgz build
-    - name: upload
+    - name: zip src
+      run: tar -czvf src.tgz src
+    - name: upload build
       uses: actions/upload-artifact@v3
       with:
         name: upload
         path: build.tgz
+    - name: upload src
+      uses: actions/upload-artifact@v3
+      with:
+        name: upload
+        path: src.tgz
